@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Editor & Motion Designer Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    header {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid #334155;
+    }
+    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    p.intro { font-size: 1.25rem; color: var(--muted); max-width: 650px; }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #0f172a;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    section { margin: 4rem 0; }
+    h2 { font-size: 1.75rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.3rem; }
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    ul { padding-left: 1.2rem; color: var(--muted); }
+    footer { text-align: center; color: var(--muted); padding: 3rem 0; border-top: 1px solid #334155; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- 1. HEADER -->
+    <header>
+      <h1>[Your Name]</h1>
+      <p class="intro">Video Editor & Motion Designer — Turning talking-head videos into engaging visual explainers using motion graphics and hybrid animation.</p>
+      <a href="mailto:tu-email@correo.com" class="btn">Get in Touch</a>
+    </header>
+
+    <!-- 3. FEATURED PROJECTS -->
+    <section>
+      <h2>Featured Work</h2>
+      
+      <!-- Proyecto 1 -->
+      <article class="project-card">
+        <h3>Tech Explainer Series</h3>
+        <p><strong>Role:</strong> Video Editor & Motion Designer</p>
+        <p><em>The client needed to make dense technical concepts visually clear and fast-paced without losing narrative structure.</em></p>
+        
+        <!-- Reemplaza el SRC por el link de embed de tu video de YouTube/Vimeo -->
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        </div>
+
+        <h4>Key Contributions:</h4>
+        <ul>
+          <li>Cleaned up narrative pacing, jump cuts, and audio.</li>
+          <li>Designed custom on-screen infographics, dynamic lower thirds, and callouts.</li>
+          <li>Integrated 2D/3D visual aids to explain complex ideas.</li>
+        </ul>
+      </article>
+
+    </section>
+
+    <!-- 4. SERVICES -->
+    <section>
+      <h2>Core Services</h2>
+      <ul>
+        <li><strong>Editing & Post-Production:</strong> Pacing, A/B roll assembly, color grading, and audio cleanup.</li>
+        <li><strong>Motion & Graphic Design:</strong> Animated infographics, title cards, and motion overlays.</li>
+        <li><strong>Multi-Format Reframing:</strong> Converting 16:9 edits to 9:16 vertical shorts for Reels/TikTok while maintaining graphic alignment.</li>
+      </ul>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer>
+      <p>Have an upcoming project or need to elevate your video content?</p>
+      <p>Contact: <a href="mailto:tu-email@correo.com" style="color:var(--accent);">tu-email@correo.com</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
