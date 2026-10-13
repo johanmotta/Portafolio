@@ -125,7 +125,6 @@
 
     .instagram-embed {
       width: 100%;
-      min-height: 480px;
       border-radius: 8px;
       overflow: hidden;
       background: #f1f5f9;
@@ -134,11 +133,15 @@
       justify-content: center;
     }
 
-    .instagram-embed iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 480px;
-      border: none;
+    /* Ocultar elementos de descripción residuales si el script los genera */
+    .instagram-embed blockquote p {
+      display: none !important;
+    }
+
+    .instagram-embed .instagram-media {
+      min-width: 100% !important;
+      margin: 0 !important;
+      border-radius: 8px !important;
     }
 
     .breakdown-comment {
@@ -198,18 +201,13 @@
 
   <div class="container">
 
-    <!-- ==========================================================================
-         1. HERO SECTION
-         ========================================================================== -->
+    <!-- HERO SECTION -->
     <header>
       <h1>Steven Motta</h1>
       <p class="intro">Video Editor & Motion Designer — Turning talking-head videos into engaging visual explainers using motion graphics and hybrid animation.</p>
     </header>
 
-
-    <!-- ==========================================================================
-         2. MAIN FEATURED REEL (VIMEO)
-         ========================================================================== -->
+    <!-- MAIN FEATURED REEL (VIMEO) -->
     <section>
       <h2>Featured Reel</h2>
       
@@ -235,10 +233,7 @@
       </article>
     </section>
 
-
-    <!-- ==========================================================================
-         3. INSTAGRAM REELS GRID
-         ========================================================================== -->
+    <!-- INSTAGRAM REELS GRID -->
     <section>
       <h2>Short-Form Work & Breakdowns</h2>
 
@@ -249,8 +244,9 @@
           <h3>2.5D Motion Graphic Transition</h3>
           
           <div class="instagram-embed">
-            <!-- REEMPLAZA EL IFRAME ABAJO POR TU CÓDIGO EMBED DE INSTAGRAM -->
-            <iframe src="https://www.instagram.com/reel/EXAMPLE1/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            <!-- NOTA: Se eliminó 'data-instgrm-captioned' para ocultar la descripción -->
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DeKMQc_Rz0W/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            </blockquote>
           </div>
 
           <div class="breakdown-comment">
@@ -263,8 +259,9 @@
           <h3>Dynamic Kinetic Typography</h3>
           
           <div class="instagram-embed">
-            <!-- REEMPLAZA EL IFRAME ABAJO POR TU CÓDIGO EMBED DE INSTAGRAM -->
-            <iframe src="https://www.instagram.com/reel/EXAMPLE2/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            <!-- NOTA: Se eliminó 'data-instgrm-captioned' para ocultar la descripción -->
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dd-M34TskBK/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            </blockquote>
           </div>
 
           <div class="breakdown-comment">
@@ -275,10 +272,7 @@
       </div>
     </section>
 
-
-    <!-- ==========================================================================
-         4. CORE SERVICES
-         ========================================================================== -->
+    <!-- CORE SERVICES -->
     <section>
       <h2>Core Services</h2>
       <ul class="services-list">
@@ -288,10 +282,7 @@
       </ul>
     </section>
 
-
-    <!-- ==========================================================================
-         5. FOOTER
-         ========================================================================== -->
+    <!-- FOOTER -->
     <footer>
       <p>Have an upcoming project or need to elevate your video content?</p>
       <p>Contact: <a href="mailto:js.mottahurtado@gmail.com">js.mottahurtado@gmail.com</a></p>
@@ -299,5 +290,14 @@
 
   </div>
 
+  <!-- Script oficial de Instagram -->
+  <script async src="https://www.instagram.com/embed.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      if (window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+    });
+  </script>
 </body>
 </html>
