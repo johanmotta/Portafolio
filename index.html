@@ -6,34 +6,38 @@
   <title>Steven Motta — Video Editor & Motion Designer</title>
   <style>
     :root {
-      /* Puedes ajustar los colores HEX aquí si deseas modificarlos a futuro */
-      --bg: #0f172a;        /* Fondo principal (Azul oscuro / Antracita) */
-      --card-bg: #1e293b;   /* Fondo de las tarjetas de proyectos */
-      --text: #f8fafc;      /* Texto principal */
-      --muted: #94a3b8;     /* Texto secundario / Gris suave */
-      --accent: #38bdf8;    /* Color de acento / Botones y bordes */
-      --btn-text: #0f172a;  /* Color del texto dentro del botón */
-      --border: #334155;    /* Color de las líneas divisorias */
+      /* Palette */
+      --bg: #eae9e5;          /* Background color */
+      --card-bg: #ffffff;     /* Container background for cards */
+      --text-heading: #5989f5;/* Main headings & titles */
+      --text-body: #2d3748;   /* Primary body text */
+      --muted: #4a5568;       /* Secondary details & key notes */
+      --border: #cbd5e1;      /* Subtle border dividers */
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--bg);
-      color: var(--text);
+      color: var(--text-body);
       line-height: 1.6;
       margin: 0;
       padding: 0;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 2rem 1.5rem;
+      padding: 2rem 1.25rem;
     }
 
-    header {
-      padding: 3rem 0 2rem;
-      border-bottom: 1px solid var(--border);
+    /* Headings */
+    h1, h2, h3, h4 {
+      color: var(--text-heading);
+      margin-top: 0;
     }
 
     h1 { 
@@ -41,96 +45,178 @@
       margin-bottom: 0.5rem; 
     }
 
+    h2 { 
+      font-size: 1.75rem; 
+      border-bottom: 2px solid var(--text-heading); 
+      display: inline-block; 
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ==========================================================================
+       1. HERO SECTION
+       ========================================================================== */
+    header {
+      padding: 2.5rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
     p.intro { 
-      font-size: 1.25rem; 
+      font-size: 1.2rem; 
       color: var(--muted); 
-      max-width: 650px; 
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--btn-text);
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 1rem;
-      transition: opacity 0.2s ease;
-    }
-
-    .btn:hover {
-      opacity: 0.9;
+      max-width: 700px; 
+      margin: 0;
     }
 
     section { 
-      margin: 4rem 0; 
+      margin: 3.5rem 0; 
     }
 
-    h2 { 
-      font-size: 1.75rem; 
-      border-bottom: 2px solid var(--accent); 
-      display: inline-block; 
-      padding-bottom: 0.3rem; 
-    }
-
-    .project-card {
+    /* ==========================================================================
+       2. MAIN REEL SECTION (VIMEO)
+       ========================================================================== */
+    .featured-card {
       background: var(--card-bg);
       border-radius: 12px;
       padding: 1.5rem;
-      margin-bottom: 2.5rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     }
 
     .video-container {
       position: relative;
-      padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
       height: 0;
       overflow: hidden;
       border-radius: 8px;
-      margin-top: 1rem;
+      margin: 1.25rem 0;
     }
 
     .video-container iframe {
       position: absolute;
-      top: 0; 
-      left: 0;
-      width: 100%; 
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       border: 0;
     }
 
-    ul { 
-      padding-left: 1.2rem; 
-      color: var(--muted); 
+    /* ==========================================================================
+       3. INSTAGRAM REELS GRID
+       ========================================================================== */
+    .reels-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on desktop */
+      gap: 1.5rem;
     }
 
+    .reel-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .reel-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .instagram-embed {
+      width: 100%;
+      min-height: 480px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .instagram-embed iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      border: none;
+    }
+
+    .breakdown-comment {
+      margin-top: 1rem;
+      background: #f8fafc;
+      padding: 1rem;
+      border-left: 4px solid var(--text-heading);
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* ==========================================================================
+       4. CORE SERVICES
+       ========================================================================== */
+    ul.services-list { 
+      padding-left: 1.2rem; 
+      color: var(--text-body); 
+    }
+
+    ul.services-list li {
+      margin-bottom: 0.75rem;
+    }
+
+    /* ==========================================================================
+       5. FOOTER
+       ========================================================================== */
     footer { 
       text-align: center; 
       color: var(--muted); 
       padding: 3rem 0; 
       border-top: 1px solid var(--border); 
     }
+
+    footer a {
+      color: var(--text-heading);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (MEDIA QUERIES)
+       ========================================================================== */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      p.intro { font-size: 1.1rem; }
+      .reels-grid { grid-template-columns: 1fr; } /* Stack to 1 column on mobile */
+      .container { padding: 1.5rem 1rem; }
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <!-- 1. HEADER -->
+
+    <!-- ==========================================================================
+         1. HERO SECTION
+         ========================================================================== -->
     <header>
       <h1>Steven Motta</h1>
       <p class="intro">Video Editor & Motion Designer — Turning talking-head videos into engaging visual explainers using motion graphics and hybrid animation.</p>
-      <a href="mailto:johanmotta@gmail.com" class="btn">Get in Touch</a>
     </header>
 
-    <!-- 2. FEATURED PROJECTS -->
+
+    <!-- ==========================================================================
+         2. MAIN FEATURED REEL (VIMEO)
+         ========================================================================== -->
     <section>
-      <h2>Featured Work</h2>
+      <h2>Featured Reel</h2>
       
-      <!-- Proyecto 1 -->
-      <article class="project-card">
-        <h3>Tech Explainer Series</h3>
+      <article class="featured-card">
+        <h3>Tech Explainer & Motion Graphics Reel</h3>
         <p><strong>Role:</strong> Video Editor & Motion Designer</p>
-        <p><em>The client needed to make dense technical concepts visually clear and fast-paced without losing narrative structure.</em></p>
+        <p><em>Comprehensive showreel showcasing narrative structure, motion graphics integration, and visual pacing.</em></p>
         
         <div class="video-container">
           <iframe 
@@ -141,30 +227,76 @@
         </div>
 
         <h4>Key Contributions:</h4>
-        <ul>
+        <ul style="color: var(--muted); padding-left: 1.2rem;">
           <li>Cleaned up narrative pacing, jump cuts, and audio.</li>
           <li>Designed custom on-screen infographics, dynamic lower thirds, and callouts.</li>
           <li>Integrated 2D/3D visual aids to explain complex ideas.</li>
         </ul>
       </article>
-
     </section>
 
-    <!-- 3. SERVICES -->
+
+    <!-- ==========================================================================
+         3. INSTAGRAM REELS GRID
+         ========================================================================== -->
+    <section>
+      <h2>Short-Form Work & Breakdowns</h2>
+
+      <div class="reels-grid">
+
+        <!-- Reel Card 1 -->
+        <article class="reel-card">
+          <h3>2.5D Motion Graphic Transition</h3>
+          
+          <div class="instagram-embed">
+            <!-- REEMPLAZA EL IFRAME ABAJO POR TU CÓDIGO EMBED DE INSTAGRAM -->
+            <iframe src="https://www.instagram.com/reel/EXAMPLE1/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+          </div>
+
+          <div class="breakdown-comment">
+            <strong>Breakdown:</strong> Para este proyecto utilicé un workflow híbrido combinando animación 2D en After Effects y blocking 3D para lograr una transición fluida en un video explainer.
+          </div>
+        </article>
+
+        <!-- Reel Card 2 -->
+        <article class="reel-card">
+          <h3>Dynamic Kinetic Typography</h3>
+          
+          <div class="instagram-embed">
+            <!-- REEMPLAZA EL IFRAME ABAJO POR TU CÓDIGO EMBED DE INSTAGRAM -->
+            <iframe src="https://www.instagram.com/reel/EXAMPLE2/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+          </div>
+
+          <div class="breakdown-comment">
+            <strong>Breakdown:</strong> Enfoque en retención de audiencia para formato vertical (9:16). Diseñé subtítulos animados y mapas gráficos de datos para mantener el ritmo del habla.
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         4. CORE SERVICES
+         ========================================================================== -->
     <section>
       <h2>Core Services</h2>
-      <ul>
+      <ul class="services-list">
         <li><strong>Editing & Post-Production:</strong> Pacing, A/B roll assembly, color grading, and audio cleanup.</li>
         <li><strong>Motion & Graphic Design:</strong> Animated infographics, title cards, and motion overlays.</li>
         <li><strong>Multi-Format Reframing:</strong> Converting 16:9 edits to 9:16 vertical shorts for Reels/TikTok while maintaining graphic alignment.</li>
       </ul>
     </section>
 
-    <!-- 4. FOOTER -->
+
+    <!-- ==========================================================================
+         5. FOOTER
+         ========================================================================== -->
     <footer>
       <p>Have an upcoming project or need to elevate your video content?</p>
-      <p>Contact: <a href="mailto:johanmotta@gmail.com" style="color:var(--accent);">johanmotta@gmail.com</a></p>
+      <p>Contact: <a href="mailto:js.mottahurtado@gmail.com">js.mottahurtado@gmail.com</a></p>
     </footer>
+
   </div>
 
 </body>
